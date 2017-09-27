@@ -7,13 +7,11 @@ int main () {
 	scanf ("%d", &opcao);
 
 	if (opcao == 1) {
-		while (valor > 0) {
-			resposta += (valor%2);
-			resposta *= 10;
+		while (!valor) {
+			binario += ((decimal%2) * base);
+			base *= 10;
 			valor /= 2;
 		}
-		resposta /= 10;
-		
 	}
 
 	else {
