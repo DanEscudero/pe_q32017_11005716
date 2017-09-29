@@ -12,22 +12,26 @@ float aleatorio () {
 }
 
 int main () {
-	int pts_totais, pts_dentro = 0;	
-	float x, y;
+	int pts_totais, pts_dentro = 0, max;	
+	float x, y, pi;
 	srand (time(NULL));
 	
-	scanf ("%d", &pts_totais);
+	scanf ("%d", &max);
 	
-	while (i <= pontos) {
+	while (pts_totais <= max) {
 		x = aleatorio();
 		y = aleatorio();
-		pontos ++;
+		pts_totais ++;
 		
-		if (distancia (x, y, 0.5, 0.5) <= 0.5) {
+		if (distancia_pontos (x, y, 0.5, 0.5) <= 0.5) {
 			pts_dentro ++;
 		}
 		
 	}
+	
+	pi = 4 * (pts_dentro/pts_totais);
+	
+	printf ("pi = %f\n", pi);
 
 	return 0;
 }
