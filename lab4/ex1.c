@@ -11,7 +11,7 @@ char * concatena (char *s1, char *s2) {
 	char *string = malloc (sizeof (char) * 255);
 	int t_s1, t_s2;
 	
-	t_s1 = tamanho (s1);
+	t_s1 = tamanho (s1); 
 	t_s2 = tamanho (s2);
 	
 	for (int i = 0; i != (t_s1 + t_s2); i ++) {
