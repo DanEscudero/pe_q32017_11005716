@@ -33,7 +33,7 @@ int busca (int * vet, int tam, int x)
 }
 
 /* Conta quantas vezes um numero x ocorre
-   no vetor v a partir da posicao pos */
+ * no vetor v a partir da posicao pos */
 int conta_ocorr (int * v, int tam, int x, int pos)
 {
 	int ocorr = 1;
@@ -52,9 +52,9 @@ void repeticoes (int * v, int tam)
 	int * impresso = inicia_vet (tam);
 	
 	for (int i = 0; i < tam; i++) {
-		ocorr = conta_ocorr (v, tam, v[i], i);
+		ocorr = conta_ocorr(v, tam, v[i], i);
 		
-		if (ocorr > 1 && (busca (impresso, tam, v[i]) == -1)) {
+		if (ocorr > 1 && (busca(impresso, tam, v[i]) == -1)) {
 			printf ("%d-%d ", v[i], ocorr);
 			impresso [i] = v[i];
 		}
@@ -66,9 +66,9 @@ int main () {
 	int * vet;
 	
 	scanf ("%d", &tam);
-	vet = inicia_vet (tam);
-	le_vet (vet, tam);
-	repeticoes (vet, tam);
+	vet = inicia_vet(tam);
+	le_vet(vet, tam);
+	repeticoes(vet, tam);
 	printf ("\n");
 
 }
