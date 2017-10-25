@@ -7,7 +7,7 @@ int fatorial (int x) {
 		resultado *= i;
 	}
 }
-
+  
 double inverso (double x) {
 	return 1/x;
 }
