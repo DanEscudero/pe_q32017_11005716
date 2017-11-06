@@ -2,11 +2,10 @@
 #include <stdlib.h>
 #define M 3
 
-/* Imprime matriz m*n */
-int imprime_matriz (int *v, int n, int m) {
+void imprime_matriz_t (int v[M][M], int n, int m) {
 	for (int i = 0; i < m; i++) {
 		for (int j = 0; j < n; j++) {
-			printf ("%d ", *(v + m*i + j));
+			printf ("%d ", v[j][i]);
 		}
 		printf ("\n");
 	}
@@ -14,28 +13,10 @@ int imprime_matriz (int *v, int n, int m) {
 }
 
 /* Le matriz m*n */
-void le_matriz (int *v, int n, int m) {
+void le_matriz (int v[M][M], int n, int m) {
 	for (int i = 0; i < m; i++) {
 		for (int j = 0; j < n; j++) {
-			scanf ("%d", (v + m*i + j));
-		}
-	}
-}
-
-/* Troca valores */
-void troca (int * x, int * y) {
-	int aux;
-	
-	aux = *x;
-	*x = *y;
-	*y = aux;
-}
-
-/* Transpoe matriz */
-void transpor (int * v, int n, int m) {
-	for (int i = 0; i < n; i++) {
-		for (int j = 0; j < m; j++) {
-			troca (&v[i][j], &v[j][i]);
+			scanf ("%d", &v[i][j]);
 		}
 	}
 }
@@ -43,12 +24,8 @@ void transpor (int * v, int n, int m) {
 int main () {
 	int mat[M][M];
 	
-	le_matriz (*mat, M, M);
-	printf ("Matriz Normal:\n");
-	imprime_matriz (*mat, M, M);
-	transpor (mat, M, M);
-	printf ("Matriz Transposta:\n");
-	imprime_matriz (*mat, M, M);
+	le_matriz (mat, M, M);
+	imprime_matriz_t (mat, M, M);
 	
 	return 0;
 }
