@@ -12,7 +12,7 @@ float rand_range (int min, int max)
 	return (float)r;
 }
 
-/* Funcoes seguintes preenchem o vetor */
+/* As funcoes seguintes preenchem o vetor */
 void preenche_ord (int *vet, int n)
 {
 	for (int i = 0; i < n; i++)
@@ -61,7 +61,7 @@ void swap (int *a, int *b)
 void tempo (clock_t inicio, clock_t fim, char *string)
 {
 	double tempo = (fim-inicio)*1.0/CLOCKS_PER_SEC;
-	printf ("%s %lf\n", string, tempo);
+	printf ("%s %lf s\n", string, tempo);
 }
 
 void insertion_sort (int *v, int n)
@@ -118,6 +118,9 @@ int main () {
 	insertion_sort (vet_rand, SIZE);
 	fim = clock();
 	tempo(inicio, fim, "aleatorio:");
+	
+	preenche_vet (vet_inv, SIZE, 2);
+	preenche_vet (vet_rand, SIZE, 3);
 	
 	printf ("\n===QUICK SORT===\n");
 	inicio = clock();
